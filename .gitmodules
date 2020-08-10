@@ -1,0 +1,12 @@
+[submodule "kirby"]
+	path = kirby
+	url = https://github.com/getkirby/kirby.git
+[submodule "site/plugins/cachebuster"]
+	path = site/plugins/cachebuster
+	url = https://github.com/schnti/kirby3-cachebuster.git
+[submodule "site/plugins/markdown-field"]
+	path = site/plugins/markdown-field
+	url = https://github.com/sylvainjule/kirby-markdown-field
+[submodule "site/plugins/kirby3-feed"]
+	path = site/plugins/kirby3-feed
+	url = https://github.com/bnomei/kirby3-feed.git
