@@ -26,10 +26,6 @@ package-lock.json
 !/content/home/home.txt
 !/content/error/error.txt
 
-# Media
-# ------------
-
-/media
 
 # Dev
 # ------------
