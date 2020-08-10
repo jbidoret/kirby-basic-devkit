@@ -1,6 +1,6 @@
 # Kirby Basic Dev Kit
 
-Based on (kirby-devkit)[https://github.com/julien-gargot/kirby-devkit] by Julien Gargot + Louis Eveillard. Updated to Gulp 4. Added [cachebuster](https://github.com/schnti/kirby3-cachebuster.git),
+Forked from [kirby-devkit](https://github.com/julien-gargot/kirby-devkit) by Julien Gargot + Louis Eveillard. Updated to Gulp 4. Added [cachebuster](https://github.com/schnti/kirby3-cachebuster.git),
 [markdown-field](https://github.com/sylvainjule/kirby-markdown-field) and [kirby3-feed](https://github.com/bnomei/kirby3-feed.git) plugins to submodules.
 
 
