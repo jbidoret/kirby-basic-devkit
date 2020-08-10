@@ -1,0 +1,14 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+
+

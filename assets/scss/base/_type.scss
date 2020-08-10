@@ -1,0 +1,18 @@
+//* fonts
+// @import "../fonts/FontFamily/FontName.css";
+
+
+body{
+  font-family: var(--basefamily); 
+  font-size: var(--basesize);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;  
+}
+
+h1, h2, h3 { font-weight: 400;}
+
+p, ul, ol, blockquote {
+  max-width: 35em;
+}
