@@ -18,13 +18,14 @@ You will need Npm and GIT (for the Kirby submodules) to use this project.
   ```
   git clone https://github.com/jbidoret/kirby-basic-devkit.git your-project
   cd your-project
-  git submodule update --init
+  git submodule update --init --recursive
   cd kirby
   composer update
   ```
 
 2. install Npm from projct root:
   ```
+  cd ../
   npm install
   ```
 
