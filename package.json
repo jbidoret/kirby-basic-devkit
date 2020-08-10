@@ -1,0 +1,42 @@
+{
+  "name": "kirby-gulp-devkit",
+  "version": "1.0.0",
+  "description": "Kirby base installation for developers.",
+  "authors": [
+    "Julien Gargot",
+    "Louis Eveillard",
+    "Julien Bidoret"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbidoret/kirby-basic-devkit.git"
+  },
+  "browserslist": [
+    "> 1%",
+    "ie >= 8",
+    "edge >= 15",
+    "ie_mob >= 10",
+    "ff >= 45",
+    "chrome >= 45",
+    "safari >= 7",
+    "opera >= 23",
+    "ios >= 7",
+    "android >= 4",
+    "bb >= 10"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "*",
+    "gulp-concat-css": "*",
+    "gulp-cssnano": "*",
+    "gulp-jshint": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "*",
+    "jshint": "^2.12.0"
+  }
+}
