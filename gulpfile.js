@@ -200,7 +200,58 @@ function sync(){
 }
 
 
+/**
+ *  Bumping and tagging version, and pushing changes to repository.
+ *
+ *  You can use the following commands:
+ *      gulp release --type=patch   # makes: v1.0.0 → v1.0.1
+ *      gulp release --type=minor   # makes: v1.0.0 → v1.1.0
+ *      gulp release --type=major   # makes: v1.0.0 → v2.0.0
+ *
+ *  Please read http://semver.org/ to understand which type to use.
+ *
+ *  The 'gulp release' task is an example of a release task for a NPM package.
+ *  This task will run 'publish' as a dependent and 'bump'.
+ **/
+
+
+var gp_bump = require('gulp-bump');
+var gp_git  = require('gulp-git');
+var gp_filter = require('gulp-filter');
+var argv = require('yargs')
+    .option('type', {
+        alias: 't',
+        choices: ['patch', 'minor', 'major']
+    }).argv;
+var gp_tag = require('gulp-tag-version');
+var gp_push = require('gulp-git-push');
+
+function bump() {
+  return src('./package.json')
+    // bump package.json and bowser.json version
+    .pipe(gp_bump({
+        type: argv.type || 'patch'
+    }))
+    // save the bumped files into filesystem
+    .pipe(dest('./'))
+    // commit the changed files
+    .pipe(gp_git.commit('bump version'))
+    // filter one file
+    .pipe(gp_filter('package.json'))
+    // create tag based on the filtered file
+    .pipe(gp_tag())
+    // push changes into repository
+    .pipe(gp_push({                      
+        repository: 'origin',
+        refspec: 'HEAD'
+    }))
+}
+
+
+
 exports.sync = series(kirby, sync);
 exports.dev = series(kirby, lint, sass);
 exports.build = series(kirby, sass, css, lint, scripts);
 exports.default = series(kirby, sass, css, lint, scripts);
+
+exports.publish = series(kirby, sass, css, lint, scripts, bump);
