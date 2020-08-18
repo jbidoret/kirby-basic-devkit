@@ -9,5 +9,9 @@ Kirby Configuration For Localhost
 
 return [
   'environment' => 'local',
-  'debug'  => true
+  'schnti.cachebuster.active' => false,
+  'debug'  => true,
+  'thumbs' => [
+    'bin' => '/usr/local/bin/convert'
+  ]
 ];
