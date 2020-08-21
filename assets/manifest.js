@@ -38,4 +38,4 @@ module.exports.userStyles = [
  * as well as other niceties from [browser sync](https://www.browsersync.io/)
  * write your local dev url in the localDevUrl variable.
  */
-module.exports.localDevUrl = 'http://localhost/kirby-basic-devkit/';
+module.exports.localDevUrl = 'http://localhost/savoirplusrisquermoins/';
