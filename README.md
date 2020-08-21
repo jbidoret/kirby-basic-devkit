@@ -1,7 +1,6 @@
 # Kirby Basic Dev Kit
 
-Forked from [kirby-devkit](https://github.com/julien-gargot/kirby-devkit) by Julien Gargot + Louis Eveillard. Updated to Gulp 4. Added [cachebuster](https://github.com/schnti/kirby3-cachebuster.git),
-[markdown-field](https://github.com/sylvainjule/kirby-markdown-field) and [kirby3-feed](https://github.com/bnomei/kirby3-feed.git) plugins to submodules.
+Forked from [kirby-devkit](https://github.com/julien-gargot/kirby-devkit) by Julien Gargot + Louis Eveillard. Updated to Gulp 4. Added [markdown-field](https://github.com/sylvainjule/kirby-markdown-field) plugin as submodule.
 
 
 # Kirby Dev Kit
@@ -19,17 +18,27 @@ You will need Npm and GIT (for the Kirby submodules) to use this project.
   git clone https://github.com/jbidoret/kirby-basic-devkit.git your-project
   cd your-project
   git submodule update --init --recursive
-  cd kirby
-  composer update
+  ```
+  Or, as of Git 2.23,
+  ```
+  git clone https://github.com/jbidoret/kirby-basic-devkit.git your-project --recurse-submodules --remote-submodules
   ```
 
-2. install Npm from projct root:
+2. install npm package from project root:
   ```
   cd ../
   npm install
   ```
 
-3. to compile all files, for **development** and **production** :
+
+
+## Configure with your server/site settings
+
+1. rename the file in `site/config/config.localhost.php` to your local development site URL [check out Multi-environment setup](http://getkirby.com/docs/advanced/options). The `environment` variable is used to load minified or unminified CSS/JS versions (checkout `snippets/header.php` and `snippets/footer.php`).
+2. to be able to use browser sync (live reloading, remote debugging, and a few other nice features), set the `localDevUrl` variable to the URL of your site in `assets/manifest.js`.
+
+## Compile and sync
+To compile all files, for **development** and **production** :
   ```
   gulp
   ```
@@ -43,9 +52,13 @@ You will need Npm and GIT (for the Kirby submodules) to use this project.
   ```
   gulp sync
   ```
-  `module.exports.localDevUrl`has to be configured for sync to work properly, in `/assets/manifest.js`.
+  
+  A routine has been set to bump version, and publish via git webhook. 
+  ```
+  gulp publish
+  ```
 
-## Configure with your server/site settings
-
-1. rename the file in `site/config/config.localhost.php` to your local development site URL [check out Multi-environment setup](http://getkirby.com/docs/advanced/options). The `environment` variable is used to load minified or unminified CSS/JS versions (checkout `snippets/header.php` and `snippets/footer.php`).
-2. to be able to use browser sync (live reloading, remote debugging, and a few other nice features), set the `localDevUrl` variable to the URL of your site in `assets/manifest.js`.
+  Alternatively, use `-t` arg, to tell whether it’s a *patch* (by default), *minor*, *major* version.
+  ```
+  gulp publish -t minor
+  ```
