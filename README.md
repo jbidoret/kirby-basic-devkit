@@ -43,6 +43,7 @@ You will need Npm and GIT (for the Kirby submodules) to use this project.
   ```
   gulp sync
   ```
+  `module.exports.localDevUrl`has to be configured for sync to work properly, in `/assets/manifest.js`.
 
 ## Configure with your server/site settings
 
