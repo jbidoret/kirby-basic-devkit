@@ -68,15 +68,18 @@ var gp_plumber      = require('gulp-plumber');
 var gp_rename       = require('gulp-rename');
 var gp_sass         = require('gulp-sass');
 var gp_uglify       = require('gulp-uglify');
+var gp_sourcemaps   = require('gulp-sourcemaps');
 
 
 // Compile our SCSS
 function sass() {
   return src( vars.userStyles )
+    .pipe(gp_sourcemaps.init())
     .pipe(gp_sass())
     .pipe(gp_autoprefixer({
     	cascade: false
     }))
+    .pipe(gp_sourcemaps.write('.'))
     .pipe(dest('assets/css'))
     .pipe(gp_browserSync.stream());   
 }
@@ -117,6 +120,7 @@ function lint() {
 function scripts(cb) {
   var scripts = vars.pluginScripts.concat( vars.userScripts );
   return src( scripts )
+    .pipe(gp_sourcemaps.init())
     .pipe(gp_concat('all.min.js'))
     .pipe(gp_uglify({
       compress: {
@@ -124,6 +128,7 @@ function scripts(cb) {
         drop_console : true
       }
     }))
+    .pipe(gp_sourcemaps.write('.'))
     .pipe(dest('assets/production'));
 }
 
@@ -148,7 +153,7 @@ function kirby(done){
   var destination = 'site/plugins/assets';
   var assets  = "<?php\n";
       assets += "# Automatically generated file by Gulp for kirby-basic-devkit; DO NOT EDIT.\n";
-      assets += "Kirby::plugin('basic-devkit/assets', [\n";
+      assets += "Kirby::plugin('julien-gargot/assets', [\n";
       assets += "  'options' => [\n";
       assets += "    'styles' => " + JSON.stringify(styles) + ",\n";
       assets += "    'scripts' => " + JSON.stringify(scripts) + ",\n";
