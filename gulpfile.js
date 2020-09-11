@@ -153,7 +153,7 @@ function kirby(done){
   var destination = 'site/plugins/assets';
   var assets  = "<?php\n";
       assets += "# Automatically generated file by Gulp for kirby-basic-devkit; DO NOT EDIT.\n";
-      assets += "Kirby::plugin('julien-gargot/assets', [\n";
+      assets += "Kirby::plugin('basic-devkit/assets', [\n";
       assets += "  'options' => [\n";
       assets += "    'styles' => " + JSON.stringify(styles) + ",\n";
       assets += "    'scripts' => " + JSON.stringify(scripts) + ",\n";
