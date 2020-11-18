@@ -15,7 +15,7 @@ You will need Npm and GIT (for the Kirby submodules) to use this project.
 
 1. clone this repo (as of Git 2.23),
   ```
-  git clone --recurse-submodules --remote-submodules https://github.com/jbidoret/kirby-basic-devkit.git your-project 
+  git clone --recurse-submodules https://github.com/jbidoret/kirby-basic-devkit.git your-project 
   cd your-project
   ```
   Or, 
