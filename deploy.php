@@ -24,7 +24,7 @@
 		// Run it
 		$tmp = shell_exec($command);
 		// Output
-		$output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
+		$output .= "\n<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #000;\">{$command}\n</span>";
 		$output .= htmlentities(trim($tmp)) . "\n";
 	}
 
@@ -34,16 +34,21 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<title>GIT DEPLOYMENT SCRIPT</title>
+	<title>./deploy</title>
+	<style>
+		body{
+			margin:2vw 4vw;
+			color:#999
+		}
+		pre{
+			font-size:1rem
+			font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+			line-height:1.3
+		}
+	</style>
 </head>
-<body style="background-color: #000000; color: #FFFFFF; font-weight: bold; padding: 0 10px;">
+<body>
 <pre>
- .  ____  .    ____________________________
- |/      \|   |                            |
-[| <span style="color: #FF0000;">&hearts;    &hearts;</span> |]  | Git Deployment Script v0.1 |
- |___==___|  /              &copy; oodavid 2012 |
-              |____________________________|
-
 <?php echo $output; ?>
 </pre>
 </body>
