@@ -37,5 +37,6 @@ module.exports.userStyles = [
 /* To enable automatic reloading on .js and .less files compilation,
  * as well as other niceties from [browser sync](https://www.browsersync.io/)
  * write your local dev url in the localDevUrl variable.
+ * module.exports.localDevUrl = 'http://localhost/your-project/';
  */
-module.exports.localDevUrl = 'http://localhost/savoirplusrisquermoins/';
+module.exports.localDevUrl = 'http://localhost/';
