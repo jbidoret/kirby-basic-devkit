@@ -10,8 +10,12 @@ Kirby Configuration
 return [
 	'environment' => 'production',
 
-	// Cachebuster plugin
-	'schnti.cachebuster.active' => false,
+	// Autoresize plugin
+	'medienbaecker.autoresize.maxWidth' => 2000,
+  'medienbaecker.autoresize.maxHeight' => 2000,
+  'medienbaecker.autoresize.quality' => 90,
+  'medienbaecker.autoresize.excludeTemplates' => [],
+  'medienbaecker.autoresize.excludePages' => [],
 
 	// Markdown plugin
 	'community.markdown-field.buttons'    => [['h1', 'h2', 'h3', 'h4', 'h5', 'h6'], 'bold', 'italic', 'divider', 'link','pagelink', 'email', 'file', 'divider', 'ul', 'ol', 'blockquote'],
