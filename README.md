@@ -2,7 +2,7 @@
 
 Forked from [kirby-devkit](https://github.com/julien-gargot/kirby-devkit) by Julien Gargot + Louis Eveillard. 
 Added [markdown-field](https://github.com/sylvainjule/kirby-markdown-field) plugin as submodule. 
-Updated to Gulp 4 and Kirby 3.6.
+Updated to Gulp 4 and Kirby 3.7.5.
 
 
 # Kirby Dev Kit
