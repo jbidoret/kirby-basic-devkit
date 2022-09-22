@@ -1,10 +1,6 @@
 [submodule "kirby"]
 	path = kirby
 	url = https://github.com/getkirby/kirby.git
-
 [submodule "site/plugins/autoresize"]
 	path = site/plugins/autoresize
 	url = https://github.com/medienbaecker/kirby-autoresize
-[submodule "site/plugins/markdown-field"]
-	path = site/plugins/markdown-field
-	url = https://github.com/fabianmichael/kirby-markdown-field.git
