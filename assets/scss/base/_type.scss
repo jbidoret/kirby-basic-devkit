@@ -1,6 +1,10 @@
 //* fonts
 // @import "../fonts/FontFamily/FontName.css";
 
+:root{
+  --basesize: 1.25rem;
+  --basefamily: "Times New Roman", serif;
+}
 
 body{
   font-family: var(--basefamily); 
@@ -11,8 +15,3 @@ body{
   line-height: 1.4;  
 }
 
-h1, h2, h3 { font-weight: 400;}
-
-p, ul, ol, blockquote {
-  max-width: 35em;
-}

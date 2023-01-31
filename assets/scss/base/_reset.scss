@@ -1,0 +1,26 @@
+/* Réinitialiser le “modèle de boite”, afin que `padding` et `border` soient contenus dans le `width` d’un élément */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Autoriser des hauteurs en pourcentage dans le site ; adapté pour les sites “application” */
+html, body { height: 100%; }
+
+/* Hauteur de ligne et amélioration du rendu typographique */
+body { line-height: 1.45; -webkit-font-smoothing: antialiased; }
+
+/* Amélioration des comportement par défaut des médias */
+img, picture, video, canvas, svg, iframe { display: block; height: auto; max-width: 100%; }
+
+/* Suppressions des margin et padding ; implique que toutes les marges “naturelles” des éléments soient redéfinies */
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
+
+/* Prevent long URLs nobreak */ 
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+
+/* Suppression des différences de corps et de graisse sur les titres */
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+
+/* Réinitalisation des propriétés typographiques sur les éléments de formulaire */
+input, button, textarea, select { font: inherit; margin: 0; }
+
+/* suppression des bordures sur les iframes */
+iframe { border: 0; }
