@@ -12,20 +12,27 @@
 		'echo $PWD',
 		'whoami',
 		'git pull',
-		'git status',
-		'git submodule sync',
-		'git submodule update',
-		'git submodule status',
+		'git status'
 	);
+
+	function custom_trim( $value ) {
+    if($value!="") { $value = trim($value);  }
+    return $value;
+	} 
+
+	function custom_htmlentities ($value ) {
+		if($value!="") { $value = htmlentities($value);  }
+    return $value;
+	}
 
 	// Run the commands for output
 	$output = '';
 	foreach($commands AS $command){
 		// Run it
-		$tmp = shell_exec($command) || "";
+		$tmp = shell_exec($command) ;
 		// Output
 		$output .= "\n<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #000;\">{$command}\n</span>";
-		$output .= htmlentities(trim($tmp)) . "\n";
+		$output .= custom_htmlentities(custom_trim($tmp)) . "\n";
 	}
 
 	// Make it pretty for manual user access (and why not?)
